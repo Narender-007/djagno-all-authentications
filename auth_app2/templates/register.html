@@ -1,0 +1,29 @@
+
+{% load socialaccount %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Register</h2>
+       
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <a href="{% provider_login_url 'google' %}">
+                    <img src="https://playtht-website-assets.s3.amazonaws.com/img/brand/google.svg" alt="Google logo"/>Sign up with Google
+            </a>
+            <a href="{% provider_login_url 'github' %}">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub logo"/>Sign up with GitHub
+            </a>
+
+
+</div>
+</body>
+</html>
+
